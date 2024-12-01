@@ -1,0 +1,140 @@
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 5%;
+    background-color: #121212;
+}
+
+#dishes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+    width: 100%;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 25%;
+    height: auto;
+    background-color: #2c2c2c;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.dish:hover {
+    transform: scale(1.05);
+}
+
+.dish-heart {
+    position: absolute;
+    background-color: #fac031;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.563rem;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    right: -10px;
+    top: -10px;
+    border-radius: 0px 37.5px 0px 42px;
+}
+
+.dish-imagem {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.dish-title {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.dish-description {
+    font-size: 1rem;
+    color: #bbb;
+    text-align: center;
+}
+
+.dish-rate {
+    font-size: 1rem;
+    color: #ffaa00;
+    display: flex;
+    align-items: center;
+}
+
+.dish-rate span {
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.dish-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.dish-price h4 {
+    color: #fac031;
+    font-weight: bold;
+}
+
+.dish-price button {
+    padding: 8px 14px;
+    background-color: #ffcb45;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dish-price button:hover {
+    background-color: #b17f00;
+}
+
+@media screen and (max-width: 768px) {
+    .dish {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .dish-title {
+        font-size: 1.2rem;
+    }
+
+    .dish-description {
+        font-size: 0.9rem;
+    }
+
+    .dish-rate {
+        font-size: 0.9rem;
+    }
+
+    .dish-price h4 {
+        font-size: 1.1rem;
+    }
+
+    .dish-price button {
+        font-size: 0.9rem;
+    }
+}

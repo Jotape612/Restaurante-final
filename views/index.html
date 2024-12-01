@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bem-vindo ao Restaurante Generico, sua pizzaria favorita!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <title>Restaurante Generico</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body> 
+
+    
+    <header>
+        <nav id="navbar">
+            <span id="nav_Logo"><i class="fas fa-pizza-slice"></i> Gen</span>
+            <ul id="nav_list">
+                <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#review">Avaliações</a></li>
+            </ul>
+            <button class="btn-default" aria-label="Peça sua pizza agora!">Peça Aqui!</button>
+            <button id="mobile_btn" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#review">Avaliações</a></li> 
+            </ul>
+            <button class="btn-default">Peça Aqui!</button>
+        </div>
+    </header> 
+
+    <main id="content">
+        <section id="home">
+            <div id="cta">
+                <h1 class="tittle">
+                    Melhor <span>Qualidade</span> e Comida <span>Genérica</span>
+                </h1>
+
+                <p class = "description">
+                    <h3>Por que somos o <span>Genérico</span> menos <span>Generico</span>?</h3>
+          <p>
+            Aqui na Pizzaria Genérica, celebramos o melhor da culinária mexicana com uma pitada de molho italiano e um toque extra de criatividade. Não se engane pelo nosso nome modesto – cada fatia é uma explosão de sabores que fará você perguntar se realmente está na Itália ou em algum cantinho ensolarado do México.
+            </p>
+            <p>Nossas pizzas são feitas com ingredientes frescos e um tempero tipicamente mexicano. A tradicional “Muçarela Nacho” e nossa especialidade, a “Calabresa com Pimenta Jalapeña,” são apenas o começo do que você vai encontrar por aqui. E claro, o “Molho Diablo” é para os fortes e aventureiros – aqueles que têm coragem para experimentar, mas talvez tragam um copo d’água por precaução.
+            </p>
+                </p>
+
+                <div id="cta_buttons">
+                    <a href="#" class ="btn-default">
+                        Ver Cardápio
+                    </a>
+                    <a href="tel:+7591245678" id="phone_button">
+                            <button class ="btn-default">
+                                <i class="fa-solid fa-phone"></i>
+                               
+                            </button>
+                            (75) 91234-5678
+                    </a>
+                </div>
+
+                <div class="social-media-buttons">
+                        <a href="">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                </div>
+
+            </div>
+
+            <div id="banner">
+                <img src="../public/images/pngtree-round-of-pizza-on-wooden-plate-png-image_11573438-removebg-preview.png" alt="">
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2 class="section-title">Cardápio</h2>
+            <h3 class="section-subtitle">Nossos pratos especiais</h3>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../public/images/pizza-anchova-removebg-preview.png" class="dish-image" alt="pizza-anchova" width="70px" height="70px">
+
+                    <h3 class="dish-title">
+                        Lorem Ipsum
+                    </h3>
+
+                    <span class="dish-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../public/images/pizza-anchova-removebg-preview.png" class="dish-image" alt="pizza-anchova" width="70px" height="70px">
+
+                    <h3 class="dish-title">
+                        Lorem Ipsum
+                    </h3>
+
+                    <span class="dish-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../public/images/pizza-anchova-removebg-preview.png" class="dish-image" alt="pizza-anchova" width="70px" height="70px">
+
+                    <h3 class="dish-title">
+                        Lorem Ipsum
+                    </h3>
+
+                    <span class="dish-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+        
+        <section id="review">
+            <h1>Nossas <span>Avaliações</span></h1>
+        
+            <div id="review_box">
+                <!-- Card 1 -->
+                <div class="review_card">
+                    <div class="review_profile">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmUfeIcz7kGp1SHHJNVyFxsy8aTXjiUW8yww&s" alt="Foto de Marcelo Marcelo">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">Marcelo Marcelo</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Simplesmente fantástico! Nunca comi uma pizza assim antes."</em></p>
+                    </div>
+                </div>
+        
+                <!-- Card 2 -->
+                <div class="review_card">
+                    <div class="review_profile">
+                        <img src="https://images.playground.com/69a429f2131b4747804145328f7d19f4.jpeg" alt="Foto de Don, o Don">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">Don, o Don</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Nem sabia que precisava disso até experimentar."</em></p>
+                    </div>
+                </div>
+        
+                <!-- Card 3 -->
+                <div class="review_card">
+                    <div class="review_profile">
+                        <img src="https://stable-diffusion-art.com/wp-content/uploads/2023/08/image-40.png" alt="Foto de Maria Calabresa">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">Maria Calabresa</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Parece uma obra de arte... e o sabor é ainda melhor!"</em></p>
+                    </div>
+                </div>
+        
+                <!-- Card 4 -->
+                <div class="review_card">
+                    <div class="review_profile">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFQn2H3sCMkrW4VJBePNV41Wnkb6nNxRSpkTZvC4If5OTy8CqPpND2W4D5dWOALP5_WWA&usqp=CAU" alt="Foto de João Nome Real">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">João Nome Real</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Pedi por curiosidade e agora quero toda semana."</em></p>
+                    </div>
+                </div>
+        
+                <!-- Card 5 -->
+                <div class="review_card">
+                    <div class="review_profile">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSItsE_7yk7lp23Pt6df5nlgESK_CdNRBiyd8p8jbP5qIBUYiEVZEh9LfgkkQM3kippWpA&usqp=CAU" alt="Foto de Julia Nome Real">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">Julia Nome Real</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Tão bom que até meu pai cadeirante correu pra comer."</em></p>
+                    </div>
+                </div>
+        
+                <!-- Card 6 -->
+                <div class="review_card">
+                    <div class="review_profile">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDZpZSPEyoa3ihU_MAIPnic-1mspgn97knDi_4YcvU8AFuIVJNQbv6JEpa-ugH9-30vVw&usqp=CAU" alt="Foto de Maricata Batata">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">Maricata Batata</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Todo lugar que vejo, só olho para ela! Literalmente, eu coloquei uma nos meus olhos."</em></p>
+                    </div>
+                </div>
+
+                 <!-- Card 7 -->
+                 <div class="review_card">
+                    <div class="review_profile">
+                        <img src="https://mjbeats.com.br/wp-content/uploads/2023/06/Bart-Simpson-e-Michael-Jackson-thriller-MJ-Beats.jpg" alt="Foto de Lord">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">Lord de XX-Bahia</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Marcia quem reconmedoú essa pizzeria! Ela like, n like Marcia?"</em></p>
+                    </div>
+                </div>
+
+                 <!-- Card 8 -->
+                 <div class="review_card">
+                    <div class="review_profile">
+                        <img src="../public/images/maercia.jpg" alt="Foto de Marcia">
+                    </div>
+                    <div class="review_text">
+                        <h2 class="name">Marcia</h2>
+                        <div class="review_icon">
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                            <span class="estrela">⭐</span>
+                        </div>
+                        <p><em>"Eu adorei Patraún!"</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+    </main>
+
+
+
+    <footer>
+        <img src="../public/images/wave.svg" alt="Wave Image">
+    
+        <div id="footer_items">
+            <span id="copyright">
+                &copy; 2024 João Paulo Oliveira
+            </span>
+    
+            <div class="social-media-buttons">
+                <a href="" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+
+
+
+
+
+    <script src="../routes/script.js"></script>
+</body>
+</html>
