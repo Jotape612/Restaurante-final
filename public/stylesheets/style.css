@@ -1,10 +1,11 @@
-<<<<<<< HEAD
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
 @import url('header.css');
 @import url('home.css');
 @import url('menu.css');
 @import url('review.css');
 @import url('footer.css');
+@import url('carrinho.css');
 
 
 
@@ -73,79 +74,4 @@ section {
     color: #e6e6e6;
     font-size: 2.1875rem;
 }
-=======
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
-@import url('header.css');
-@import url('home.css');
-@import url('menu.css');
-@import url('review.css');
-@import url('footer.css');
 
-
-
-* {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #000000e0;
-}
-
-section {
-    padding: 28px 8%;
-}
-
-.btn-default {
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fac031;
-    border-radius: 12px;
-    padding: 10px 14px;
-    font-weight: 600;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-default:hover {
-    background-color: #b17f00;
-}
-
-.social-media-buttons {
-    display: flex;
-    gap: 18px;
-}
-
-.social-media-buttons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 40px;
-    background-color: #333333;
-    font-size: 1.25rem;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #fff;
-    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-}
-
-.social-media-buttons a:hover {
-    background-color: #e6e6e6;
-}
-
-.section-title {
-    color: #fac031;
-    font-size: 1.563rem;
-}
-
-.section-subtitle {
-    color: #e6e6e6;
-    font-size: 2.1875rem;
-}
->>>>>>> b4e0dce9974c93538ddeae6fb2f7c40592a6a4c7

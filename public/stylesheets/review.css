@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #review {
     display: flex;
     flex-direction: column;
@@ -118,7 +118,7 @@
         width: 100%;
     }
 }
-=======
+
 #review {
     display: flex;
     flex-direction: column;
@@ -238,4 +238,4 @@
         width: 100%;
     }
 }
->>>>>>> b4e0dce9974c93538ddeae6fb2f7c40592a6a4c7
+

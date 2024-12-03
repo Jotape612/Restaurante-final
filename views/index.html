@@ -6,38 +6,14 @@
     <meta name="description" content="Bem-vindo ao Restaurante Generico, sua pizzaria favorita!">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="../public/stylesheets/style.css">
-    
+    <script src="../routes/addToCard.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <title>Restaurante Generico</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyDcUEW2R77z69JVig953jzlJ7LBgABueh4",
-          authDomain: "restaurante-generico-62ef3.firebaseapp.com",
-          projectId: "restaurante-generico-62ef3",
-          storageBucket: "restaurante-generico-62ef3.firebasestorage.app",
-          messagingSenderId: "1006261801240",
-          appId: "1:1006261801240:web:73998a8c77dce48a194e6d",
-          measurementId: "G-W7FCET93KS"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-
-
 </head>
+
+
 <body> 
 
     
@@ -48,17 +24,31 @@
                 <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="#review">Avaliações</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html">
+                        <span class="cart-count" id="cart-count">0</span>
+                        <i class="fas fa-shopping-cart"></i>Carrinho</a>
+                </li>
             </ul>
-            <button class="btn-default" aria-label="Peça sua pizza agora!">Peça Aqui!</button>
+            <button class="btn-default" onclick="window.location.href='login.html'" aria-label="Peça sua pizza agora!">Peça Aqui!</button>
             <button id="mobile_btn" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
         </nav>
+
+        
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
                 <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="#review">Avaliações</a></li> 
+                <li>
+                    <a class="nav-link" href="carrinho.html">
+                        <span class="cart-count" id="cart-count">0</span>
+                        <i class="fas fa-shopping-cart"></i> Carrinho
+                    </a>
+                </li>
             </ul>
-            <button class="btn-default">Peça Aqui!</button>
+            <button class="btn-default" onclick="window.location.href='login.html'" aria-label="Peça sua pizza agora!">Peça Aqui!</button>
+            
         </div>
     </header> 
 
@@ -79,7 +69,7 @@
                 </p>
 
                 <div id="cta_buttons">
-                    <a href="#" class ="btn-default">
+                    <a href="#menu" class ="btn-default">
                         Ver Cardápio
                     </a>
                     <a href="tel:+7591245678" id="phone_button">
@@ -120,14 +110,15 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <img src="../public/images/pizza-anchova-removebg-preview.png" class="dish-image" alt="pizza-anchova" width="70px" height="70px">
+                    <img src="../public/images/pizza-anchova-removebg-preview.png" class="dish-image" 
+                    alt="pizza-marguerita" width="70px" height="70px">
 
                     <h3 class="dish-title">
-                        Lorem Ipsum
+                        Pizza de marguerita
                     </h3>
 
                     <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Deliciosa e clássica
                     </span>
 
                     <div class="dish-rate">
@@ -140,8 +131,40 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
+                        <h4>R$24,99</h4>
+                        <button class="btn-default" onclick="addToCart('Pizza de marguerita', 24.99)">
+    <i class="fa-solid fa-basket-shopping"></i>
+</button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../public/images/Pizza-Quatro-Queijos.jpg" class="dish-image" alt="pizza-4q" width="70px" height="70px">
+
+                    <h3 class="dish-title">
+                        Pizza Quatro Queijos
+                    </h3>
+
+                    <span class="dish-description">
+                        Inimigo Nº¹ dos intolerantes.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$27,99</h4>
+                        <button class="btn-default" onclick="addToCart('Pizza Quatro Queijos', 27.99)">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
@@ -152,14 +175,14 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <img src="../public/images/pizza-anchova-removebg-preview.png" class="dish-image" alt="pizza-anchova" width="70px" height="70px">
+                    <img src="../public/images/calabresa.png" class="dish-image" alt="pizza-calab" width="70px" height="70px">
 
                     <h3 class="dish-title">
-                        Lorem Ipsum
+                        Pizza de Calabresa
                     </h3>
 
                     <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                       Para quem gosta de se panturrar de carne.
                     </span>
 
                     <div class="dish-rate">
@@ -173,39 +196,7 @@
 
                     <div class="dish-price">
                         <h4>R$20,00</h4>
-                        <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-
-                    <img src="../public/images/pizza-anchova-removebg-preview.png" class="dish-image" alt="pizza-anchova" width="70px" height="70px">
-
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
-
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
-                    </div>
-
-                    <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
+                        <button class="btn-default" onclick="addToCart('Pizza de Calabresa', 20.00)">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
@@ -392,15 +383,39 @@
             </div>
         </div>
     </footer>
-    
-
-
-
-
-
 
 
 
     <script src="../routes/script.js"></script>
+
+    
+
+    <script type="module">
+       
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyDcUEW2R77z69JVig953jzlJ7LBgABueh4",
+          authDomain: "restaurante-generico-62ef3.firebaseapp.com",
+          projectId: "restaurante-generico-62ef3",
+          storageBucket: "restaurante-generico-62ef3.firebasestorage.app",
+          messagingSenderId: "1006261801240",
+          appId: "1:1006261801240:web:73998a8c77dce48a194e6d",
+          measurementId: "G-W7FCET93KS"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        console.log('antes')
+        firebase.auth().signInWithEmailAndPassword("any@email.com", "123456").then(response => {
+            console.log('sucess', response)
+        }).catch(error => {
+            console.log('error', error)
+        });
+            console.log('depois') 
+      </script>
+      
 </body>
 </html>

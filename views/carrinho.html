@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generico - Carrinho</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="../routes/script.js"></script>    
+</head>
+
+<body>
+      <header>
+        <nav id="navbar">
+            <span id="nav_Logo"><i class="fas fa-pizza-slice"></i> Gen</span>
+            <ul id="nav_list">
+                <li class="nav-item "><a class="nav-link" href="../views/index.html">Home</a></li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="carrinho.html">
+                        <span class="cart-count" id="cart-count">0</span>
+                        <i class="fas fa-shopping-cart"></i> Carrinho
+                    </a>
+                </li>
+            </ul>
+            <button class="btn-default" onclick="window.location.href='login.html'" aria-label="Peça sua pizza agora!">Peça Aqui!</button>
+            <button id="mobile_btn" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+        </nav>
+
+        
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item "><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="carrinho.html">
+                        <span class="cart-count" id="cart-count">0</span>
+                        <i class="fas fa-shopping-cart"></i> Carrinho
+                    </a>
+                </li>
+            </ul>
+            <button class="btn-default" onclick="window.location.href='login.html'" aria-label="Peça sua pizza agora!">Peça Aqui!</button>
+            
+        </div>
+    </header> 
+
+    <main class="cart-container">
+        <h1>Seu Carrinho</h1>
+        <div id="cartItems"></div>
+        <p class="cart-total">Total: <span id="totalValue">R$ 0,00</span></p>
+        <button class="btn-primary" onclick="finalizarCompra()">Finalizar Compra</button>
+<div id="pedidoAlert" class="alert" style="display: none;">
+    Compra realizada com sucesso!
+</div>
+
+        <div id="pedidoAlert" class="alert">Compra finalizada com sucesso!</div>
+    </main>
+
+    <footer>
+        <div id="footer_items">
+            <span id="copyright">&copy; 2024 João Paulo Oliveira</span>
+            <div class="social-media-buttons">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../routes/finalizarCompra.js"></script>
+</body>
+
+</html>

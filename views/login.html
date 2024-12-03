@@ -1,30 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generico - Login</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../routes/script.js"></script>
     <link rel="stylesheet" href="../public/stylesheets/style.css">
     <link rel="stylesheet" href="../public/stylesheets/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer">
 
 </head>
+
+
 <body>
-       
     <header>
         <nav id="navbar">
             <span id="nav_Logo"><i class="fas fa-pizza-slice"></i> Gen</span>
             <ul id="nav_list">
-                <li class="nav-item active"><a class="nav-link" href="../views/index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="../views/index.html">Início</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html">
+                        <span class="cart-count" id="cart-count">0</span>
+                        <i class="fas fa-shopping-cart"></i> Carrinho
+                    </a>
+                </li>
             </ul>
         </nav>
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
-                <li class="nav-item active"><a class="nav-link" href="../views/index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="../views/index.html">Início</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../views/carrinho.html">
+                        <span class="cart-count" id="cart-count">0</span>
+                        <i class="fas fa-shopping-cart"></i> Carrinho
+                    </a>
+                </li>
             </ul>
         </div>
     </header> 
@@ -32,9 +46,9 @@
     <div class="login">
         <div class="login-form">
             <h1>Login</h1>
-            <form action="#">
-                <input type="text" placeholder="E-mail" required>
-                <input type="password" placeholder="Senha" required>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="password" id="password" placeholder="Senha" required minlength="6">
                 <button type="submit">Entrar</button>
                 <div class="checkbox">
                     <input type="checkbox" id="remember">
@@ -47,115 +61,60 @@
     </div>
 
     <footer>
-        <img src="../public/images/wave.svg" alt="Wave Image">
-    
         <div id="footer_items">
-            <span id="copyright">
-                &copy; 2024 João Paulo Oliveira
-            </span>
-    
+            <span id="copyright">&copy; 2024 João Paulo Oliveira</span>
             <div class="social-media-buttons">
-                <a href="">
-                    <i class="fa-brands fa-whatsapp"></i>
+                <a href="#" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 </a>
-                <a href="">
-                    <i class="fa-brands fa-instagram"></i>
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="">
-                    <i class="fa-brands fa-facebook"></i>
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </footer>
 
-    <script>
-        function forgotPassword() {
-            window.location.href = "recuperar.html";
-        }
-        function redirecionar() {
-            window.location.href = "criarconta.html";
-        }
+    
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+        // Configuração Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDcUEW2R77z69JVig953jzlJ7LBgABueh4",
+            authDomain: "restaurante-generico-62ef3.firebaseapp.com",
+            projectId: "restaurante-generico-62ef3",
+            storageBucket: "restaurante-generico-62ef3.firebasestorage.app",
+            messagingSenderId: "1006261801240",
+            appId: "1:1006261801240:web:73998a8c77dce48a194e6d",
+            measurementId: "G-W7FCET93KS"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const loginForm = document.getElementById("login-form");
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    alert("Login bem-sucedido!");
+                    console.log("Usuário autenticado:", userCredential.user);
+                })
+                .catch((error) => {
+                    alert("Erro ao fazer login. Verifique suas credenciais.");
+                    console.error("Erro:", error.code, error.message);
+                });
+        });
     </script>
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generico - Login</title>
-    <link rel="stylesheet" href="../public/stylesheets/style.css">
-    <link rel="stylesheet" href="../public/stylesheets/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-</head>
-<body>
-       
-    <header>
-        <nav id="navbar">
-            <span id="nav_Logo"><i class="fas fa-pizza-slice"></i> Gen</span>
-            <ul id="nav_list">
-                <li class="nav-item active"><a class="nav-link" href="../views/index.html">Início</a></li>
-            </ul>
-        </nav>
-        <div id="mobile_menu">
-            <ul id="mobile_nav_list">
-                <li class="nav-item active"><a class="nav-link" href="../views/index.html">Início</a></li>
-            </ul>
-        </div>
-    </header> 
-
-    <div class="login">
-        <div class="login-form">
-            <h1>Login</h1>
-            <form action="#">
-                <input type="text" placeholder="E-mail" required>
-                <input type="password" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
-                <div class="checkbox">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Lembrar-me</label>  
-                    <a href="recuperar.html" class="forgot-password">Esqueceu a senha?</a>
-                </div>
-            </form>
-            <a href="criarconta.html" class="link-color">Criar uma conta</a>
-        </div>
-    </div>
-
-    <footer>
-        <img src="../public/images/wave.svg" alt="Wave Image">
-    
-        <div id="footer_items">
-            <span id="copyright">
-                &copy; 2024 João Paulo Oliveira
-            </span>
-    
-            <div class="social-media-buttons">
-                <a href="">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a href="">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function forgotPassword() {
-            window.location.href = "recuperar.html";
-        }
-        function redirecionar() {
-            window.location.href = "criarconta.html";
-        }
-    </script>
-</body>
-</html>
-

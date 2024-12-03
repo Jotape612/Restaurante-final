@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #menu {
     display: flex;
     flex-direction: column;
@@ -139,7 +139,7 @@
         font-size: 0.9rem;
     }
 }
-=======
+
 #menu {
     display: flex;
     flex-direction: column;
@@ -280,4 +280,3 @@
         font-size: 0.9rem;
     }
 }
->>>>>>> b4e0dce9974c93538ddeae6fb2f7c40592a6a4c7
